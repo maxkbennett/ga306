@@ -1,0 +1,13 @@
+import maya.cmds as cmds
+
+def maxname(pref, suff):
+    selected = cmds.ls(sl=True,long=True)
+    i = 0
+    for eachSel in selected:
+       #rename objects here
+       i = i+1
+       num = str(i)
+       cmds.rename(eachSel,pref + num + suff)
+       print(num)
+   
+maxname(pref ="name", suff="_low")
